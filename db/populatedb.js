@@ -1,21 +1,6 @@
 const { Client } = require("pg");
 
-// const SQL = `
-// CREATE TABLE IF NOT EXISTS usernames (
-//   id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-//   username VARCHAR ( 255 )
-// );
-
-// INSERT INTO usernames (username)
-// VALUES
-//   ('Bryan'),
-//   ('Odin'),
-//   ('Damon');
-// `;
-
 const SQL = `
-CREATE DATABASE members_only;
-
 CREATE TABLE IF NOT EXISTS users (
 id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 first_name varchar(255),
@@ -37,14 +22,15 @@ created_by varchar(255));
 
 INSERT INTO messages (title, timestamp, text, created_by) 
 VALUES 
-('sample text', '', 'bottom text', 'john';)
+('sample text', '1970-01-01 00:00:00', 'bottom text', 'john');
 `;
+
+const dbName = process.env.dbName || "members_only";
 
 async function main() {
   console.log("seeding...");
   const client = new Client({
-    connectionString:
-      "postgresql://postgres:postgres@localhost:5432/computer_parts",
+    connectionString: "postgresql://postgres:postgres@localhost:5432/" + dbName,
   });
   await client.connect();
   await client.query(SQL);
