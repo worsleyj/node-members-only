@@ -4,7 +4,7 @@ const router = Router();
 const controller = require("../controllers/controller");
 
 router.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", { user: req.user });
 });
 
 router.get("/join-secret-cult", (req, res) => {

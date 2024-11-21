@@ -27,7 +27,7 @@ router.post("/sign-up", async (req, res, next) => {
 });
 
 router.get("/log-in", (req, res) => {
-  res.render("log-in");
+  res.render("log-in", { user: req.user });
 });
 
 router.post(
