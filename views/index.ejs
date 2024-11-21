@@ -3,6 +3,7 @@
 </head>
 <% if (locals.user) {%>
 <h1>LOGGED IN AS <%= user.username %></h1>
+<button><a href="/log-out">Log Out</a></button>
 <% } else { %>
 <h1>no log in</h1>
 <% } %>

@@ -1,6 +1,7 @@
 <h1>Log In</h1>
 <% if (locals.user) {%>
 <h1>Welcome back <%= user.first_name %></h1>
+<button><a href="/log-out">Log Out</a></button>
 <% } %>
 <form action="/log-in" method="POST">
   <label for="username">Username</label>
