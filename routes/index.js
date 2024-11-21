@@ -1,4 +1,3 @@
-const pool = require("../db/pool");
 const { Router } = require("express");
 const router = Router();
 const controller = require("../controllers/controller");
