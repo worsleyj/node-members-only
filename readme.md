@@ -2,10 +2,16 @@
 
 ## Setup
 
-Create a new PostgreSQL database and set the name in dotenv config. Default database name is "members_only".
-To populate the database with tables and dummy values, run the command _node db/populatedb.js_.
+Create a new PostgreSQL database and set the name in dotenv config. Default database name is "members*only".
+To populate the database with tables and dummy values, run the command \_node db/populatedb.js*.
 
-## Dotenv
+## Environment Variables (.env)
 
-PORT=num, where num is the port you wish to specify. Default port is 3000.
-dbName=name, where name is the name of the PostgreSQL database you created. Default is "members_only".
+### Place all environment variables in a .env file in the root directory.\
+
+USER=username, where username is your PostgreSQL username.\
+PASS=password, where password is your PostgreSQL password.\
+
+Optional\
+PORT=num, where num is the port you wish to specify. Default port is 3000.\
+DB=name, where name is the name of the PostgreSQL database you created. Default is "members_only".\

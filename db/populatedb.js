@@ -26,7 +26,7 @@ VALUES
 ('sample text', '1970-01-01 00:00:00', 'bottom text', 'john');
 `;
 
-const dbName = process.env.dbName || "members_only";
+const dbName = process.env.DB || "members_only";
 
 async function main() {
   console.log("seeding...");
