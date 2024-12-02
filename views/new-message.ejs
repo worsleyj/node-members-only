@@ -1,0 +1,14 @@
+<h1>New Message</h1>
+<% if (locals.user) {%>
+<h1>Welcome <%= user.first_name %></h1>
+<form action="/new" method="POST">
+  <label for="title">Title</label>
+  <input id="title" name="title" placeholder="title" type="text" />
+  <label for="text">Message Text</label>
+  <input id="text" name="text" type="text" />
+  <button>Create Message</button>
+  <% } else { %> 
+    <h2>Please log in first</h2>
+    <button><a href="/log-in">Login</a></button></span
+    <% } %>
+</form>
