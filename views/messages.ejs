@@ -1,4 +1,6 @@
 <h1>Messages</h1>
 <% for(message of messages) { %>
-<li>message.title</li>
+<h2><%= message.title %></h2>
+<li><%= message.text %></li>
+<li>posted by <%= message.created_by %> at <%= message.timestamp %></li>
 <% } %>
