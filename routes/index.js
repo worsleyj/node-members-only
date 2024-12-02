@@ -22,4 +22,9 @@ router.get("/messages", (req, res) => {
 router.get("/messages/new", (req, res) => {
   res.render("new-message", { user: req.user });
 });
+
+router.post("/messages/new", (req, res) => {
+  controller.addMessage(req, res);
+});
+
 module.exports = router;
