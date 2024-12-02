@@ -7,6 +7,10 @@ async function getUsers(req, res) {
   );
 }
 
+async function getMessages(req, res) {
+  const messages = await db.queryAll("messages");
+  res.render("messages", { messages: messages });
+}
 async function addUser(req, res) {
   const { first_name, last_name, username, password } = req.body;
   await db.insertUser(first_name, last_name, username, password);
@@ -14,5 +18,6 @@ async function addUser(req, res) {
 }
 module.exports = {
   getUsers,
+  getMessages,
   addUser,
 };
