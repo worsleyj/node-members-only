@@ -2,5 +2,6 @@
 <% for(message of messages) { %>
 <h2><%= message.title %></h2>
 <li><%= message.text %></li>
+<% if (locals.user) { %>
 <li>posted by <%= message.created_by %> at <%= message.timestamp %></li>
-<% } %>
+<% } %> <% } %>

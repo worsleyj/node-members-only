@@ -9,7 +9,7 @@ async function getUsers(req, res) {
 
 async function getMessages(req, res) {
   const messages = await db.queryAll("messages");
-  res.render("messages", { messages: messages });
+  res.render("messages", { messages: messages, user: req.user });
 }
 async function addUser(req, res) {
   const { first_name, last_name, username, password } = req.body;
