@@ -18,8 +18,15 @@ async function insertMessage(title, timestamp, text, created_by) {
     [title, timestamp, text, created_by]
   );
 }
+
+async function upgradeUser(status, id) {
+  await pool.query(
+    "UPDATE users SET member_status = '" + status + "' WHERE id = " + id
+  );
+}
 module.exports = {
   queryAll,
   insertUser,
   insertMessage,
+  upgradeUser,
 };

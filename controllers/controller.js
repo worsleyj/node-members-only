@@ -25,9 +25,21 @@ async function addMessage(req, res) {
   res.redirect("/");
 }
 
+async function upgradeMember(req, res) {
+  const id = req.user.id;
+  db.upgradeUser("member", id);
+}
+
+async function upgradeAdmin(req, res) {
+  const id = req.user.id;
+  db.upgradeUser("admin", id);
+}
+
 module.exports = {
   getUsers,
   getMessages,
   addUser,
   addMessage,
+  upgradeMember,
+  upgradeAdmin,
 };

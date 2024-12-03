@@ -23,4 +23,7 @@ router.post("/new", (req, res) => {
   controller.addMessage(req, res);
 });
 
+router.get("/upgrade", (req, res) => {
+  controller.upgradeAdmin(req, res);
+});
 module.exports = router;
