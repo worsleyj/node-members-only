@@ -9,7 +9,7 @@ async function getUsers(req, res) {
 
 async function getMessages(req, res) {
   const messages = await db.queryAll("messages");
-  res.render("messages", { messages: messages, user: req.user });
+  res.render("index", { messages: messages, user: req.user });
 }
 
 async function addUser(req, res) {
@@ -22,7 +22,7 @@ async function addMessage(req, res) {
   const { title, timestamp, text } = req.body;
   const created_by = req.user.first_name;
   await db.insertMessage(title, timestamp, text, created_by);
-  res.redirect("/messages");
+  res.redirect("/");
 }
 
 module.exports = {

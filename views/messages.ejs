@@ -1,8 +1,0 @@
-<h1>Messages</h1>
-<button><a href="messages/new">New Message</a></button>
-<% for(message of messages) { %>
-<h2><%= message.title %></h2>
-<li><%= message.text %></li>
-<% if (locals.user) { %>
-<li>posted by <%= message.created_by %> at <%= message.timestamp %></li>
-<% } %> <% } %>
