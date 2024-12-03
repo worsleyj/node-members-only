@@ -32,8 +32,10 @@ function upgradeUser(req, res) {
 
   if (code === "admin") {
     db.upgradeUser("admin", id);
+    res.redirect("/");
   } else if (code === "esoteric") {
     db.upgradeUser("member", id);
+    res.redirect("/");
   } else {
     res.redirect("/join-secret-cult");
   }
