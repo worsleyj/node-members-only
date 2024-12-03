@@ -4,7 +4,9 @@
 <h1>Welcome to Members Only!</h1>
 <% if (locals.user) {%>
 <h2 class="login-container">
-  Logged in as <%= user.username %><button class="logout">
+  Logged in as <%= user.member_status %> (<%= user.username %>)<button
+    class="logout"
+  >
     <a href="/log-out">X</a>
   </button>
 </h2>
