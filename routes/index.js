@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/join-secret-cult", (req, res) => {
-  res.render("join-secret-cult");
+  res.render("join-secret-cult", { user: req.user });
 });
 
 router.get("/users", (req, res) => {
@@ -23,7 +23,8 @@ router.post("/new", (req, res) => {
   controller.addMessage(req, res);
 });
 
-router.get("/upgrade", (req, res) => {
-  controller.upgradeAdmin(req, res);
+router.post("/upgrade", (req, res) => {
+  controller.upgradeUser(req, res);
 });
+
 module.exports = router;

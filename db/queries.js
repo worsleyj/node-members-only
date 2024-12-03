@@ -24,6 +24,7 @@ async function upgradeUser(status, id) {
     "UPDATE users SET member_status = '" + status + "' WHERE id = " + id
   );
 }
+
 module.exports = {
   queryAll,
   insertUser,

@@ -25,14 +25,18 @@ async function addMessage(req, res) {
   res.redirect("/");
 }
 
-async function upgradeMember(req, res) {
+function upgradeUser(req, res) {
   const id = req.user.id;
-  db.upgradeUser("member", id);
-}
+  const code = req.body.code;
+  console.log(code);
 
-async function upgradeAdmin(req, res) {
-  const id = req.user.id;
-  db.upgradeUser("admin", id);
+  if (code === "admin") {
+    db.upgradeUser("admin", id);
+  } else if (code === "esoteric") {
+    db.upgradeUser("member", id);
+  } else {
+    res.redirect("/join-secret-cult");
+  }
 }
 
 module.exports = {
@@ -40,6 +44,5 @@ module.exports = {
   getMessages,
   addUser,
   addMessage,
-  upgradeMember,
-  upgradeAdmin,
+  upgradeUser,
 };
