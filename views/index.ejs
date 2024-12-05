@@ -9,6 +9,7 @@
     ><button class="logout">X</button></a
   >
 </h2>
+
 <% } else { %>
 <h2>log in to see more</h2>
 <% } %>
@@ -17,7 +18,7 @@
   <a href="/log-in"><button>Login</button></a></span
 >
 <% if (locals.user) {%>
-<a href="join-secret-cult"><button class="glow">Join Us</button></a><% } %>
+<a href="join-secret-cult"><button class="glow">Join</button></a><% } %>
 <h1>Messages</h1>
 <% if (locals.user) { %>
 <a href="/new"><button>New Message</button></a>
