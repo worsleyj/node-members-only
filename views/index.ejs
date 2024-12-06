@@ -23,7 +23,9 @@
   <% if (locals.user) { %>
   <li>posted by <%= message.created_by %> at <%= message.timestamp %></li>
   <% if (user.member_status === "admin") { %>
-  <button>Edit Message</button>
-  <button>Delete Message</button><% } %> <% } %>
+  <span
+    ><button class="admin-btn">Edit</button>
+    <button class="admin-btn">Delete</button></span
+  ><% } %> <% } %>
 </div>
 <% } %>

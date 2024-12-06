@@ -175,3 +175,7 @@ button,
   padding: 18px;
   width: 500px;
 }
+
+.admin-btn {
+  width: 110px;
+}
