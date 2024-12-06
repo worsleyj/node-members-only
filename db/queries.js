@@ -12,10 +12,10 @@ async function insertUser(first_name, last_name, username, password) {
   );
 }
 
-async function insertMessage(title, timestamp, text, created_by) {
+async function insertMessage(title, text, created_by) {
   await pool.query(
-    "INSERT INTO messages (title, timestamp, text, created_by) VALUES ($1, $2, $3, $4)",
-    [title, timestamp, text, created_by]
+    "INSERT INTO messages (title, timestamp, text, created_by) VALUES ($1, current_timestamp, $2, $3)",
+    [title, text, created_by]
   );
 }
 
