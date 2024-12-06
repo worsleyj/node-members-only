@@ -11,19 +11,19 @@
 </h2>
 <% } else { %>
 <h2>log in to see more</h2>
-<% } %>
-<span
-  ><a href="/sign-up"><button>Signup</button></a>
-  <a href="/log-in"><button>Login</button></a></span
->
-<% if (locals.user) {%>
+<a href="/sign-up"><button class="glow">Signup</button></a>
+<a href="/log-in"><button>Login</button></a>
+<% } %> <% if (locals.user && user.member_status !== "admin") {%>
 <a href="join-secret-cult"><button class="glow">Join Us</button></a><% } %>
 <h1>Messages</h1>
-<% if (locals.user) { %>
-<a href="/new"><button>New Message</button></a>
-<% } %> <% for(message of messages) { %>
-<h2><%= message.title %></h2>
-<li><%= message.text %></li>
-<% if (locals.user) { %>
-<li>posted by <%= message.created_by %> at <%= message.timestamp %></li>
-<% } %> <% } %>
+<a href="/new"><button>New Message</button></a><% for(message of messages) { %>
+<div class="message">
+  <h2><%= message.title %></h2>
+  <li><%= message.text %></li>
+  <% if (locals.user) { %>
+  <li>posted by <%= message.created_by %> at <%= message.timestamp %></li>
+  <% if (user.member_status === "admin") { %>
+  <button>Edit Message</button>
+  <button>Delete Message</button><% } %> <% } %>
+</div>
+<% } %>
