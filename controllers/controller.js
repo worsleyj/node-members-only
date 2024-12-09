@@ -19,7 +19,7 @@ async function addUser(req, res) {
 }
 
 async function addMessage(req, res) {
-  const { title, timestamp, text } = req.body;
+  const { title, text } = req.body;
   const created_by = req.user.first_name;
   await db.insertMessage(title, text, created_by);
   res.redirect("/");
